@@ -1,0 +1,9 @@
+nav a:hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
+
+.mc-footer-col ul li a:hover {
+    color: #000;
+    text-decoration: underline;
+}

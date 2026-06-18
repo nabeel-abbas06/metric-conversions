@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      color: #222;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .top-header {
+      background: #fff;
+      padding: 15px;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      width: 100%;
+    }
+
+    .logo-wrapper img {
+      height: 42px;
+      width: auto;
+    }
+
+    .logo-wrapper h1 {
+      font-size: 28px;
+      color: #000;
+    }
+
+    .nav-header {
+      background: #000;
+      padding: 15px 0;
+      width: 100%;
+    }
+
+    @media (max-width:768px) {
+      .nav-header {
+        padding: 0;
+      }
+
+      .responsive-nav {
+        display: none;
+      }
+
+      .responsive-nav.active {
+        display: flex;
+      }
+    }
+
+    .responsive-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .responsive-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .responsive-nav a:hover {
+      color: #ccc;
+    }
+
+    .responsive-nav a.active {
+      background: #fff;
+      color: #000;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .logo-wrapper img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .top-header {
+      background: #fff;
+      padding: 14px 20px;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      height: 42px;
+    }
+
+    .brand h1 {
+      font-size: 26px;
+      margin: 0;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .nav-header {
+      background: #000;
+      width: 100%;
+    }
+
+    .responsive-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+    }
+
+    .responsive-nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      transition: 0.3s;
+    }
+
+    .responsive-nav a:hover {
+      color: #ccc;
+    }
+
+    @media (max-width:768px) {
+
+      .logo-wrapper {
+        justify-content: space-between;
+      }
+
+      .brand {
+        justify-content: flex-start;
+      }
+
+      .brand img {
+        height: 34px;
+      }
+
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+        border: none;
+        background: none;
+        font-size: 24px;
+        color: #000;
+        cursor: pointer;
+      }
+
+      .nav-header {
+        background: #000;
+      }
+
+      .responsive-nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 20px;
+      }
+
+      .responsive-nav.active {
+        display: flex;
+      }
+
+      .responsive-nav a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid #222;
+      }
+    }
+
+    @media (max-width:768px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .brand img {
+        height: 34px;
+      }
+
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .responsive-nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background: #000;
+        padding: 10px 20px;
+      }
+
+      .responsive-nav.active {
+        display: flex;
+      }
+
+      .responsive-nav a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid #222;
+      }
+    }
+
+    @media (min-width:769px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .responsive-nav {
+        display: flex !important;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 35px;
+      height: 30px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 28px;
+      background: #000;
+      margin: 6px auto;
+      border-radius: 5px;
+      transition: 0.4s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    @media(max-width:768px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+    }
+
+    .mc-footer {
+      background: #fff;
+      border-top: 1px solid #eee;
+      margin-top: 50px;
+    }
+
+    .mc-social-icons a:hover {
+      opacity: 0.7;
+    }
+
+    .mc-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .mc-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+    }
+
+    .mc-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .mc-logo img {
+      height: 40px;
+    }
+
+    .mc-logo span {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .mc-footer-brand p {
+      color: #666;
+      max-width: 320px;
+    }
+
+    .mc-footer-col h6 {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .mc-footer-col ul {
+      list-style: none;
+    }
+
+    .mc-footer-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .mc-footer-col ul li a {
+      text-decoration: none;
+      color: #666;
+    }
+
+    .mc-footer-form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .mc-footer-form input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .mc-footer-form button {
+      padding: 10px 18px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .mc-footer-form button:hover {
+      opacity: 0.7;
+    }
+
+    .mc-social-icons {
+      display: flex;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .mc-social-icons a {
+      color: #000;
+      font-size: 22px;
+    }
+
+    .mc-footer-bottom {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 18px;
+      font-size: 14px;
+    }
+
+    @media (min-width:1600px) {
+
+      .container {
+        max-width: 1400px;
+      }
+
+      .metric-grid {
+        gap: 40px;
+      }
+
+    }
+
+    @media (max-width:1200px) {
+
+      .container {
+        padding: 15px;
+      }
+
+      .metric-card {
+        padding: 20px;
+      }
+
+    }
+
+    @media (max-width:992px) {
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mc-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+    }
+
+    @media (max-width:768px) {
+
+      .logo-wrapper h1 {
+        font-size: 24px;
+      }
+
+      .responsive-nav {
+        gap: 10px;
+      }
+
+      .responsive-nav a {
+        font-size: 13px;
+        padding: 6px 10px;
+      }
+
+      .metric-card {
+        padding: 18px;
+      }
+
+      .metric-card h4 {
+        font-size: 22px;
+      }
+
+      .mc-footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .mc-logo {
+        justify-content: center;
+      }
+
+      .mc-footer-brand p {
+        max-width: 100%;
+      }
+
+      .mc-social-icons {
+        justify-content: center;
+      }
+
+      .mc-footer-form {
+        flex-direction: column;
+      }
+
+      .mc-footer-form button {
+        width: 100%;
+      }
+
+    }
+
+    @media (max-width:480px) {
+
+      .logo-wrapper img {
+        height: 34px;
+      }
+
+      .logo-wrapper h1 {
+        font-size: 20px;
+      }
+
+      .metric-card {
+        padding: 15px;
+      }
+
+      .metric-card h4 {
+        font-size: 20px;
+      }
+
+      .metric-card p,
+      .metric-card li {
+        font-size: 14px;
+      }
+
+      .mc-social-icons a {
+        font-size: 18px;
+      }
+
+    }
+
+    .metric-card button:hover {
+      opacity: 0.7;
+    }
+
+    .metric-card {
+      background: #f9fafb;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .1);
+      margin-bottom: 3rem;
+    }
+
+    .metric-card h2 {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .accordion-header {
+      cursor: pointer;
+      padding: 15px;
+      font-weight: 600;
+      background: #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accordion-header:hover {
+      background: #cbd5e1;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 15px;
+      background: #f9fafb;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-header">
+    <div class="logo-wrapper">
+
+      <div class="brand">
+        <img src="images/Metric Conversion Logo Image.jpeg" alt="Metric Conversions Logo">
+        <h1>Metric Conversions</h1>
+      </div>
+
+      <button class="menu-toggle" onclick="toggleMenu(this)">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <header class="nav-header">
+    <nav class="responsive-nav" id="mobileMenu">
+      <a href="index.html" onclick="toggleMenu()">Home</a>
+      <a href="conversionchart.html" onclick="toggleMenu()">Conversion Chart</a>
+      <a href="length.html" onclick="toggleMenu()">Length</a>
+      <a href="area.html" onclick="toggleMenu()">Area</a>
+      <a href="volume.html" onclick="toggleMenu()">Volume</a>
+      <a href="mass.html" onclick="toggleMenu()">Mass</a>
+      <a href="temperature.html" onclick="toggleMenu()">Temperature</a>
+      <a href="history.html" onclick="toggleMenu()">History</a>
+      <a href="articles.html" onclick="toggleMenu()">Articles</a>
+      <a href="faq.html" onclick="toggleMenu()">FAQs</a>
+    </nav>
+  </header>
+
+  <section class="py-20 max-w-5xl mx-auto px-6">
+    <div class="metric-card">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q1. How do I enter numbers in scientific notation?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Use formats like <strong>1.2e3</strong> for 1200.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q2. What is a knot? What is a nautical mile?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p><strong>a. Knot</strong><br>A knot is a unit of speed used in maritime and aviation contexts.<br>1 knot = 1
+            nautical mile per hour.<br>Abbreviated as kn or kt.</p>
+          <p><strong>b. Nautical Mile</strong><br>1 nautical mile = 1.852 km = 1.1508 miles.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q3. What about rainfall? How do I convert between inches and millimeters of rain?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p>1 inch = 25.4 mm<br>1 mm = 0.03937 in</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q4. What is the difference between the Short Ton, Long Ton, and Metric Ton?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p><strong>Short Ton (US Ton):</strong> 1 short ton = 2,000 lb = 907.1847 kg</p>
+          <p><strong>Long Ton (Imperial Ton):</strong> 1 long ton = 2,240 lb = 1,016.05 kg</p>
+          <p><strong>Metric Ton (Tonne):</strong> 1 metric ton = 1,000 kg = 2,204.62 lb</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q5. At what temperature are Celsius and Fahrenheit the same?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Celsius and Fahrenheit are equal at <strong>-40°</strong>.</p>
+        </div>
+      </div>
+
+      <div class="metric-card" style="margin-top:2rem;">
+        <h2>Ask AI FAQ</h2>
+        <input type="text" id="faqSearch" placeholder="Type your question here..."
+          class="border p-3 rounded w-full mb-2">
+        <button onclick="searchFAQ()" class="bg-black text-white px-4 py-2 rounded mb-4">Search</button>
+        <div id="faqResult" class="mt-4 text-gray-700"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const headers = document.querySelectorAll('.accordion-header');
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const openItem = document.querySelector('.accordion-content.show');
+        if (openItem && openItem !== content) {
+          openItem.classList.remove('show');
+          openItem.style.display = 'none';
+          openItem.previousElementSibling.querySelector('i').classList.remove('fa-rotate-180');
+        }
+        if (content.style.display === 'block') {
+          content.style.display = 'none';
+          header.querySelector('i').classList.remove('fa-rotate-180');
+        } else {
+          content.style.display = 'block';
+          header.querySelector('i').classList.add('fa-rotate-180');
+        }
+      });
+    });
+
+    const faqs = [
+      {
+        question: "How do I enter numbers in scientific notation?",
+        answer: "Use formats like 1.2e3 for 1200.",
+        keywords: ["scientific", "notation", "numbers", "format", "exponent", "e3", "input", "math", "calculator", "number"]
+      },
+      {
+        question: "What is a knot?",
+        answer: "A knot is a unit of speed used in maritime and aviation contexts. 1 knot = 1 nautical mile per hour.",
+        keywords: ["knot", "speed", "nautical", "maritime", "aviation", "unit", "distance", "nauticalmile", "ship", "travel"]
+      },
+      {
+        question: "What is a nautical mile?",
+        answer: "1 nautical mile = 1.852 km = 1.1508 miles. Based on Earth's circumference.",
+        keywords: ["nautical", "mile", "distance", "sea", "air", "navigation", "gps", "coordinate", "unit", "length"]
+      },
+      {
+        question: "How do I convert inches to millimeters?",
+        answer: "1 inch = 25.4 mm. Multiply inches by 25.4 to convert.",
+        keywords: ["inch", "mm", "millimeter", "convert", "rain", "measurement", "unit", "length", "math", "calculation"]
+      },
+      {
+        question: "At what temperature are Celsius and Fahrenheit the same?",
+        answer: "Celsius and Fahrenheit are equal at -40°.",
+        keywords: ["celsius", "fahrenheit", "temperature", "equal", "-40", "scale", "unit", "measurement", "convert", "thermometer"]
+      },
+      {
+        question: "Why can two objects at the same temperature feel different to touch?",
+        answer: "Because thermal conductivity and heat capacity of materials differ, causing different rates of heat transfer to your skin.",
+        keywords: ["temperature", "touch", "thermal", "conductivity", "heat", "objects", "skin", "perception", "material", "difference"]
+      },
+      {
+        question: "Why is Kelvin never written with a degree symbol (°)?",
+        answer: "Kelvin is an absolute scale starting from absolute zero; it is a true SI unit and not a relative scale like Celsius or Fahrenheit.",
+        keywords: ["kelvin", "degree", "symbol", "absolute", "si", "temperature", "unit", "scale", "celsius", "fahrenheit"]
+      },
+      {
+        question: "What happens to the average kinetic energy of particles when temperature decreases?",
+        answer: "The average kinetic energy of particles decreases, resulting in slower particle motion and lower temperature.",
+        keywords: ["kinetic", "energy", "particles", "temperature", "motion", "decrease", "speed", "thermal", "physics", "molecules"]
+      },
+      {
+        question: "Why is absolute zero impossible to reach in practice?",
+        answer: "Because removing all kinetic energy from particles completely is physically impossible; even at extremely low temperatures, quantum effects prevent reaching absolute zero.",
+        keywords: ["absolute", "zero", "temperature", "impossible", "kinetic", "energy", "particles", "physics", "quantum", "cold"]
+      },
+      {
+        question: "Why does metal expand more than glass when heated?",
+        answer: "Metal has a higher coefficient of thermal expansion than glass, so it expands more for the same temperature increase.",
+        keywords: ["metal", "expand", "glass", "heat", "thermal", "expansion", "coefficient", "temperature", "material", "physics"]
+      },
+      {
+        question: "Why does water not freeze exactly at 0°C under all conditions?",
+        answer: "Impurities, pressure, and supercooling can lower or raise the freezing point, so pure water at standard pressure freezes at 0°C.",
+        keywords: ["water", "freeze", "celsius", "temperature", "pressure", "impurities", "supercooling", "freeze point", "ice", "conditions"]
+      },
+      {
+        question: "Which temperature scale is directly proportional to particle motion and why?",
+        answer: "The Kelvin scale is directly proportional to particle kinetic energy; temperature in Kelvin reflects average particle motion.",
+        keywords: ["kelvin", "temperature", "particle", "motion", "kinetic", "energy", "scale", "direct", "proportional", "physics"]
+      },
+      {
+        question: "Why does sweating cool the human body?",
+        answer: "Sweating cools the body because evaporation of water from skin absorbs heat energy, lowering body temperature.",
+        keywords: ["sweating", "cool", "body", "evaporation", "skin", "heat", "temperature", "human", "water", "energy"]
+      },
+      {
+        question: "Why is temperature not a measure of total heat energy?",
+        answer: "Temperature measures average kinetic energy per particle, not total heat which depends on mass and specific heat capacity.",
+        keywords: ["temperature", "heat", "energy", "measure", "average", "kinetic", "particles", "total", "mass", "physics"]
+      },
+      {
+        question: "Why is millimeter more suitable than centimeter to measure paper thickness?",
+        answer: "Because paper thickness is very small, using millimeters gives more precise measurements than centimeters.",
+        keywords: ["millimeter", "centimeter", "paper", "thickness", "measure", "precision", "small", "unit", "length", "accuracy"]
+      },
+      {
+        question: "Why is meter considered a base unit but kilometer is not?",
+        answer: "Meter is a fundamental SI base unit of length; kilometer is derived from meter and is a multiple, not a base unit.",
+        keywords: ["meter", "kilometer", "base", "unit", "si", "length", "derived", "fundamental", "measurement", "distance"]
+      },
+      {
+        question: "Why is it incorrect to measure the distance between two cities in centimeters?",
+        answer: "Because centimeters are too small for large distances, making it impractical and cumbersome to use.",
+        keywords: ["distance", "cities", "centimeters", "measurement", "large", "unit", "impractical", "scale", "length", "accuracy"]
+      },
+      {
+        question: "Why do scientists prefer SI units for distance measurement?",
+        answer: "SI units provide standardization, consistency, and ease of calculation across all scientific measurements.",
+        keywords: ["scientists", "si", "units", "distance", "measurement", "standard", "consistency", "calculation", "science", "unit"]
+      },
+      {
+        question: "Why does length measurement change with instrument error?",
+        answer: "Errors in measurement tools, parallax, and temperature effects can lead to variations in length readings.",
+        keywords: ["length", "measurement", "instrument", "error", "parallax", "temperature", "tools", "reading", "accuracy", "variation"]
+      },
+      {
+        question: "Why is light-year a unit of distance and not time?",
+        answer: "A light-year measures the distance light travels in one year, not time; it is a unit of length.",
+        keywords: ["light-year", "distance", "time", "light", "travel", "unit", "measurement", "space", "astronomy", "length"]
+      },
+      {
+        question: "Why are very small distances measured in nanometers?",
+        answer: "Nanometers are convenient for extremely small lengths such as atomic and molecular scales.",
+        keywords: ["nanometer", "small", "distance", "atomic", "molecular", "scale", "measurement", "unit", "physics", "length"]
+      },
+      {
+        question: "Why does thermal expansion affect length measurement?",
+        answer: "Materials expand or contract with temperature, affecting length readings if temperature is not controlled.",
+        keywords: ["thermal", "expansion", "length", "measurement", "temperature", "material", "change", "reading", "physics", "dimension"]
+      },
+      {
+        question: "Why can measuring tape give different readings in hot and cold weather?",
+        answer: "Because tape material expands in heat and contracts in cold, causing measurement variations.",
+        keywords: ["measuring", "tape", "temperature", "hot", "cold", "expansion", "contraction", "length", "reading", "weather"]
+      },
+      {
+        question: "Why is parallax error important in length measurement?",
+        answer: "Parallax error occurs when viewing scale markings from an angle, affecting precision in measurements.",
+        keywords: ["parallax", "error", "length", "measurement", "precision", "scale", "viewing", "angle", "reading", "accuracy"]
+      },
+      {
+        question: "Why can two objects have the same area but different shapes?",
+        answer: "Because area measures space covered, not the shape; two shapes can occupy the same area with different outlines.",
+        keywords: ["area", "objects", "shape", "dimension", "space", "measurement", "geometry", "same", "different", "surface"]
+      },
+      {
+        question: "Why is square meter preferred over square centimeter for room area?",
+        answer: "Square meters are more practical for rooms because square centimeters would produce very large numbers.",
+        keywords: ["square", "meter", "centimeter", "room", "area", "practical", "measurement", "size", "unit", "dimension"]
+      },
+      {
+        question: "Why does doubling the length of a square increase its area by more than double?",
+        answer: "Area = length × width; doubling sides quadruples area, so area increases more than twice.",
+        keywords: ["area", "square", "length", "double", "math", "geometry", "dimension", "calculation", "size", "measurement"]
+      },
+      {
+        question: "Why is area considered a two-dimensional quantity?",
+        answer: "Because it involves two measurements: length and width.",
+        keywords: ["area", "two-dimensional", "quantity", "length", "width", "dimension", "measurement", "geometry", "math", "space"]
+      },
+      {
+        question: "Why is hectare used instead of square meter for land measurement?",
+        answer: "Hectare is convenient for large land areas because 1 ha = 10,000 m².",
+        keywords: ["hectare", "square", "meter", "land", "measurement", "area", "unit", "large", "dimension", "space"]
+      },
+      {
+        question: "Why can area never be negative?",
+        answer: "Area measures extent of space, which cannot be less than zero.",
+        keywords: ["area", "negative", "measurement", "space", "dimension", "size", "geometry", "unit", "math", "value"]
+      },
+      {
+        question: "Why is floor area important in construction planning?",
+        answer: "Floor area determines space utilization, occupancy, and material requirements in building design.",
+        keywords: ["floor", "area", "construction", "planning", "building", "space", "material", "design", "occupancy", "measurement"]
+      },
+      {
+        question: "Why does surface area affect heat loss?",
+        answer: "Heat transfer depends on surface area; larger surfaces lose heat faster.",
+        keywords: ["surface", "area", "heat", "loss", "transfer", "temperature", "material", "physics", "measurement", "energy"]
+      },
+      {
+        question: "Why does paint requirement depend on area, not volume?",
+        answer: "Paint covers surface area; volume is irrelevant for coating.",
+        keywords: ["paint", "area", "volume", "requirement", "surface", "coverage", "measurement", "material", "calculation", "coating"]
+      },
+      {
+        question: "Why is area measured in square units?",
+        answer: "Because area represents two-dimensional space; square units quantify it.",
+        keywords: ["area", "square", "units", "measurement", "dimension", "space", "geometry", "math", "size", "surface"]
+      },
+      {
+        question: "Why can two containers have the same volume but different shapes?",
+        answer: "Volume measures space occupied, not shape; different shapes can contain the same amount.",
+        keywords: ["volume", "container", "shape", "space", "measurement", "liquid", "solid", "capacity", "dimension", "size"]
+      },
+      {
+        question: "Why is liter used for liquids but cubic meter for large spaces?",
+        answer: "Liter is convenient for small liquid volumes; cubic meters suit large spaces like tanks or rooms.",
+        keywords: ["liter", "cubic", "meter", "liquid", "volume", "space", "measurement", "unit", "capacity", "size"]
+      },
+      {
+        question: "Why does volume change with temperature for liquids?",
+        answer: "Liquids expand or contract with temperature changes, altering their volume.",
+        keywords: ["volume", "temperature", "liquid", "expansion", "contraction", "measurement", "thermal", "unit", "physics", "change"]
+      },
+      {
+        question: "Why is volume considered a three-dimensional quantity?",
+        answer: "Volume involves length, width, and height.",
+        keywords: ["volume", "three-dimensional", "quantity", "length", "width", "height", "dimension", "measurement", "space", "unit"]
+      },
+      {
+        question: "Why is displacement method used to measure irregular object volume?",
+        answer: "Displacement measures volume by the amount of liquid displaced by the object.",
+        keywords: ["displacement", "volume", "object", "irregular", "liquid", "measurement", "method", "space", "capacity", "physics"]
+      },
+      {
+        question: "Why does air also have volume even though it is invisible?",
+        answer: "Air occupies space; its particles have volume despite being invisible.",
+        keywords: ["air", "volume", "space", "particles", "gas", "invisible", "measurement", "unit", "physics", "matter"]
+      },
+      {
+        question: "Why does compressing gas reduce its volume?",
+        answer: "Compressing decreases the space between gas particles, reducing volume.",
+        keywords: ["compress", "gas", "volume", "pressure", "space", "particles", "measurement", "physics", "density", "unit"]
+      },
+      {
+        question: "Why is volume of solids usually measured in cubic units?",
+        answer: "Because solids occupy three-dimensional space; cubic units quantify it.",
+        keywords: ["volume", "solid", "cubic", "unit", "three-dimensional", "measurement", "space", "size", "dimension", "physics"]
+      },
+      {
+        question: "Why does volume of water increase when it freezes?",
+        answer: "Water expands upon freezing due to hydrogen bonding, increasing its volume.",
+        keywords: ["water", "freeze", "volume", "expand", "hydrogen", "bond", "measurement", "temperature", "solid", "physics"]
+      },
+      {
+        question: "Why is volume important in fuel storage?",
+        answer: "Knowing volume ensures proper tank capacity and fuel management.",
+        keywords: ["volume", "fuel", "storage", "capacity", "measurement", "tank", "liquid", "space", "unit", "management"]
+      },
+      {
+        question: "Why does mass remain constant but weight changes?",
+        answer: "Mass is intrinsic to an object, while weight depends on gravity; weight changes with location.",
+        keywords: ["mass", "weight", "constant", "gravity", "force", "object", "measurement", "physics", "unit", "change"]
+      },
+      {
+        question: "Why is kilogram the SI unit of mass and not gram?",
+        answer: "Kilogram is the base SI unit for mass; gram is a derived fraction.",
+        keywords: ["kilogram", "si", "mass", "unit", "base", "gram", "measurement", "physics", "standard", "weight"]
+      },
+      {
+        question: "Why does an object weigh less on the Moon?",
+        answer: "Weight depends on gravity; the Moon has weaker gravity, so objects weigh less, but mass remains constant.",
+        keywords: ["weight", "moon", "gravity", "mass", "force", "object", "measurement", "physics", "scale", "unit"]
+      },
+      {
+        question: "Why is mass measured using a balance but weight using a spring balance?",
+        answer: "Balance compares mass against known mass; spring measures weight as force due to gravity.",
+        keywords: ["mass", "balance", "weight", "spring", "measurement", "gravity", "force", "physics", "unit", "instrument"]
+      },
+      {
+        question: "Why is inertia related to mass?",
+        answer: "Inertia is the resistance to motion; it depends on the mass of an object.",
+        keywords: ["inertia", "mass", "motion", "resistance", "physics", "object", "force", "measurement", "quantity", "unit"]
+      },
+      {
+        question: "Why do heavy objects not always fall faster than light ones?",
+        answer: "All objects fall at the same rate in vacuum; air resistance affects falling speed on Earth.",
+        keywords: ["heavy", "light", "fall", "gravity", "objects", "rate", "vacuum", "air", "resistance", "physics"]
+      },
+      {
+        question: "Why does gravity not affect mass?",
+        answer: "Mass is intrinsic to an object and independent of gravity; weight is affected by gravity.",
+        keywords: ["gravity", "mass", "weight", "force", "intrinsic", "physics", "object", "measurement", "unit", "constant"]
+      },
+      {
+        question: "Why is mass important in chemical reactions?",
+        answer: "Mass determines the amount of substance and participates in stoichiometry calculations.",
+        keywords: ["mass", "chemical", "reaction", "substance", "stoichiometry", "measurement", "unit", "quantity", "physics", "chemistry"]
+      },
+      {
+        question: "Why can mass never be zero for a physical object?",
+        answer: "Every physical object has matter, giving it non-zero mass.",
+        keywords: ["mass", "zero", "physical", "object", "matter", "measurement", "unit", "physics", "quantity", "existence"]
+      },
+      {
+        question: "Why is weight considered a force but mass is not?",
+        answer: "Weight = mass × gravity; it is a force. Mass alone is not a force.",
+        keywords: ["weight", "mass", "force", "gravity", "measurement", "physics", "unit", "object", "scale", "calculation"]
+      }
+    ];
+
+    function searchFAQ() {
+      const input = document.getElementById("faqSearch").value.toLowerCase().trim();
+      if (!input) return;
+
+      const inputWords = input.split(/\s+/);
+      let bestMatch = null;
+      let maxScore = 0;
+
+      faqs.forEach(faq => {
+        let score = 0;
+        inputWords.forEach(word => {
+          if (faq.keywords.includes(word)) score++;
+        });
+        if (score > maxScore) {
+          maxScore = score;
+          bestMatch = faq;
+        }
+      });
+
+      const resultDiv = document.getElementById("faqResult");
+      if (bestMatch) {
+        resultDiv.innerHTML = `<strong>Q: ${bestMatch.question}</strong><br>A: ${bestMatch.answer}`;
+      } else {
+        resultDiv.innerHTML = "Sorry, no matching FAQ found.";
+      }
+    }
+
+    function checkAllFAQs() {
+      const testCases = [
+        {
+          question: "At what temperature do Celsius and Fahrenheit give the same numerical value?",
+          answer: "Celsius and Fahrenheit are equal at -40°."
+        },
+        {
+          question: "Why can two objects at the same temperature feel different to touch?",
+          answer: "Because thermal conductivity of materials differs, so heat transfer from skin varies, making them feel hotter or colder."
+        },
+        {
+          question: "Why is Kelvin never written with a degree symbol (°)?",
+          answer: "Kelvin is an absolute temperature scale starting at 0 K (absolute zero), and conventionally does not use the degree symbol."
+        },
+        {
+          question: "What happens to the average kinetic energy of particles when temperature decreases?",
+          answer: "The average kinetic energy of particles decreases as temperature decreases."
+        },
+        {
+          question: "Why is absolute zero impossible to reach in practice?",
+          answer: "Because removing all energy from a system completely is not achievable; quantum mechanics prevents reaching 0 K exactly."
+        },
+        {
+          question: "Why does metal expand more than glass when heated?",
+          answer: "Because metals generally have higher coefficients of thermal expansion than glass, so they expand more with the same temperature increase."
+        },
+        {
+          question: "Why does water not freeze exactly at 0°C under all conditions?",
+          answer: "Impurities and pressure changes can shift the freezing point slightly, so water does not always freeze at exactly 0°C."
+        },
+        {
+          question: "Which temperature scale is directly proportional to particle motion and why?",
+          answer: "Kelvin is directly proportional to particle motion because temperature in K is proportional to the average kinetic energy of particles."
+        },
+        {
+          question: "Why does sweating cool the human body?",
+          answer: "Sweating cools the body as evaporation removes heat from the skin, lowering body temperature."
+        },
+        {
+          question: "Why is temperature not a measure of total heat energy?",
+          answer: "Temperature measures average kinetic energy per particle, not the total energy, which depends on mass and material."
+        },
+        {
+          question: "Why is millimeter more suitable than centimeter to measure paper thickness?",
+          answer: "Because paper thickness is very small, using millimeters gives more precise measurements than centimeters."
+        },
+        {
+          question: "Why is meter considered a base unit but kilometer is not?",
+          answer: "Meter is a fundamental SI unit; kilometer is a derived unit (1000 meters)."
+        },
+        {
+          question: "Why is it incorrect to measure the distance between two cities in centimeters?",
+          answer: "Because the distance is too large; centimeters are impractical for such long distances."
+        },
+        {
+          question: "Why do scientists prefer SI units for distance measurement?",
+          answer: "SI units provide standardization and consistency in scientific measurements."
+        },
+        {
+          question: "Why does length measurement change with instrument error?",
+          answer: "Errors in measurement instruments, such as calibration or human error, cause deviations in measured length."
+        },
+        {
+          question: "Why is light-year a unit of distance and not time?",
+          answer: "Light-year measures the distance light travels in one year; it's a measure of length, not time."
+        },
+        {
+          question: "Why are very small distances measured in nanometers?",
+          answer: "Nanometers are suitable for extremely small scales, like atomic and molecular distances."
+        },
+        {
+          question: "Why does thermal expansion affect length measurement?",
+          answer: "Temperature changes cause materials to expand or contract, affecting length measurements."
+        },
+        {
+          question: "Why can measuring tape give different readings in hot and cold weather?",
+          answer: "Because the tape expands in heat and contracts in cold, altering the measured length."
+        },
+        {
+          question: "Why is parallax error important in length measurement?",
+          answer: "Incorrect viewing angle can cause parallax error, giving inaccurate measurements."
+        },
+      ];
+
+      testCases.forEach(tc => {
+        const inputWords = tc.question.toLowerCase().trim().split(/\s+/);
+        let bestMatch = null;
+        let maxScore = 0;
+
+        faqs.forEach(faq => {
+          let score = 0;
+          inputWords.forEach(word => {
+            if (faq.keywords.includes(word)) score++;
+          });
+          if (score > maxScore) {
+            maxScore = score;
+            bestMatch = faq;
+          }
+        });
+
+        if (bestMatch) {
+          console.log("Q: ", tc.question);
+          console.log("Expected: ", tc.answer);
+          console.log("Detected: ", bestMatch.answer);
+          if (bestMatch.answer.trim() === tc.answer.trim()) {
+            console.log("%c✅ Correct Match", "color:green;font-weight:bold;");
+          } else {
+            console.log("%c❌ Incorrect Match", "color:red;font-weight:bold;");
+          }
+        } else {
+          console.log("Q: ", tc.question);
+          console.log("%c❌ No match found", "color:red;font-weight:bold;");
+        }
+
+        console.log("-------------------------------");
+      });
+    }
+
+    checkAllFAQs();
+  </script>
+
+  <footer class="mc-footer">
+    <div class="mc-container">
+
+      <div class="mc-footer-grid">
+
+        <div class="mc-footer-brand">
+          <div class="mc-logo">
+            <img src="images/Metric Conversion Logo Image.jpeg" alt="Metric Conversions Logo">
+            <span>Metric Conversions</span>
+          </div>
+          <p>
+            Simple, fast and accurate metric unit conversions for everyday and professional use.
+          </p>
+        </div>
+
+        <div class="mc-footer-col">
+          <h6><b>Converters</b></h6>
+          <ul>
+            <li><a href="length.html">Length</a></li>
+            <li><a href="area.html">Area</a></li>
+            <li><a href="volume.html">Volume</a></li>
+            <li><a href="temperature.html">Temperature</a></li>
+          </ul>
+        </div>
+
+        <div class="mc-footer-col">
+          <h6><b>Resources</b></h6>
+          <ul>
+            <li><a href="history.html">How It Works</a></li>
+            <li><a href="conversionchart.html">Conversion Chart</a></li>
+            <li><a href="articles.html">Articles</a></li>
+          </ul>
+        </div>
+
+        <div class="mc-footer-col">
+          <h6><b>Stay Connected</b></h6>
+
+          <form class="mc-footer-form" id="subscribeForm">
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+
+          <p id="msg"></p>
+          <br>
+
+          <script src="script.js"></script>
+
+          <div class="mc-social-icons">
+            <a href="https://www.facebook.com/nabeel.abbas06" aria-label="Facebook"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/nabeel_abbas06" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.threads.com/@nabeel_abbas06" aria-label="Threads"><i
+                class="fa-brands fa-threads"></i></a>
+            <a href="https://x.com/nabeel_abbas06" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.tiktok.com/@nabeel_abbas06" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="http://www.youtube.com/@nabeel.abbas06" aria-label="YouTube"><i
+                class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="mc-footer-bottom">
+      © 2025 Created by Nabeel Abbas - Metric Conversions - All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>

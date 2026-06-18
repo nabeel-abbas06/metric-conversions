@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            color: #222;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .top-header {
+            background: #fff;
+            padding: 15px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .logo-wrapper img {
+            height: 42px;
+            width: auto;
+        }
+
+        .logo-wrapper h1 {
+            font-size: 28px;
+            color: #000;
+        }
+
+        .nav-header {
+            background: #000;
+            padding: 15px 0;
+            width: 100%;
+        }
+
+        @media (max-width:768px) {
+            .nav-header {
+                padding: 0;
+            }
+
+            .responsive-nav {
+                display: none;
+            }
+
+            .responsive-nav.active {
+                display: flex;
+            }
+        }
+
+        .responsive-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .responsive-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .responsive-nav a:hover {
+            color: #ccc;
+        }
+
+        .responsive-nav a.active {
+            background: #fff;
+            color: #000;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .logo-wrapper img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .top-header {
+            background: #fff;
+            padding: 14px 20px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand img {
+            height: 42px;
+        }
+
+        .brand h1 {
+            font-size: 26px;
+            margin: 0;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .nav-header {
+            background: #000;
+            width: 100%;
+        }
+
+        .responsive-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .responsive-nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+
+        .responsive-nav a:hover {
+            color: #ccc;
+        }
+
+        @media (max-width:768px) {
+
+            .logo-wrapper {
+                justify-content: space-between;
+            }
+
+            .brand {
+                justify-content: flex-start;
+            }
+
+            .brand img {
+                height: 34px;
+            }
+
+            .brand h1 {
+                font-size: 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+                border: none;
+                background: none;
+                font-size: 24px;
+                color: #000;
+                cursor: pointer;
+            }
+
+            .nav-header {
+                background: #000;
+            }
+
+            .responsive-nav {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 20px;
+            }
+
+            .responsive-nav.active {
+                display: flex;
+            }
+
+            .responsive-nav a {
+                width: 100%;
+                padding: 12px 0;
+                border-bottom: 1px solid #222;
+            }
+        }
+
+        @media (max-width:768px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .brand img {
+                height: 34px;
+            }
+
+            .brand h1 {
+                font-size: 20px;
+            }
+
+            .responsive-nav {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                background: #000;
+                padding: 10px 20px;
+            }
+
+            .responsive-nav.active {
+                display: flex;
+            }
+
+            .responsive-nav a {
+                width: 100%;
+                padding: 12px 0;
+                border-bottom: 1px solid #222;
+            }
+        }
+
+        @media (min-width:769px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            .responsive-nav {
+                display: flex !important;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 35px;
+            height: 30px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 28px;
+            background: #000;
+            margin: 6px auto;
+            border-radius: 5px;
+            transition: 0.4s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        @media(max-width:768px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+        }
+
+        .mc-footer {
+            background: #fff;
+            border-top: 1px solid #eee;
+            margin-top: 50px;
+        }
+
+        .mc-social-icons a:hover {
+            opacity: 0.7;
+        }
+
+        .mc-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .mc-footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .mc-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .mc-logo img {
+            height: 40px;
+        }
+
+        .mc-logo span {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .mc-footer-brand p {
+            color: #666;
+            max-width: 320px;
+        }
+
+        .mc-footer-col h6 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .mc-footer-col ul {
+            list-style: none;
+        }
+
+        .mc-footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .mc-footer-col ul li a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        .mc-footer-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .mc-footer-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mc-footer-form button {
+            padding: 10px 18px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .mc-footer-form button:hover {
+            opacity: 0.7;
+        }
+
+        .mc-social-icons {
+            display: flex;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .mc-social-icons a {
+            color: #000;
+            font-size: 22px;
+        }
+
+        .mc-footer-bottom {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 18px;
+            font-size: 14px;
+        }
+
+        @media (min-width:1600px) {
+
+            .container {
+                max-width: 1400px;
+            }
+
+            .metric-grid {
+                gap: 40px;
+            }
+
+        }
+
+        @media (max-width:1200px) {
+
+            .container {
+                padding: 15px;
+            }
+
+            .metric-card {
+                padding: 20px;
+            }
+
+        }
+
+        @media (max-width:992px) {
+
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mc-footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+        }
+
+        @media (max-width:768px) {
+
+            .logo-wrapper h1 {
+                font-size: 24px;
+            }
+
+            .responsive-nav {
+                gap: 10px;
+            }
+
+            .responsive-nav a {
+                font-size: 13px;
+                padding: 6px 10px;
+            }
+
+            .metric-card {
+                padding: 18px;
+            }
+
+            .metric-card h4 {
+                font-size: 22px;
+            }
+
+            .mc-footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .mc-logo {
+                justify-content: center;
+            }
+
+            .mc-footer-brand p {
+                max-width: 100%;
+            }
+
+            .mc-social-icons {
+                justify-content: center;
+            }
+
+            .mc-footer-form {
+                flex-direction: column;
+            }
+
+            .mc-footer-form button {
+                width: 100%;
+            }
+
+        }
+
+        @media (max-width:480px) {
+
+            .logo-wrapper img {
+                height: 34px;
+            }
+
+            .logo-wrapper h1 {
+                font-size: 20px;
+            }
+
+            .metric-card {
+                padding: 15px;
+            }
+
+            .metric-card h4 {
+                font-size: 20px;
+            }
+
+            .metric-card p,
+            .metric-card li {
+                font-size: 14px;
+            }
+
+            .mc-social-icons a {
+                font-size: 18px;
+            }
+
+        }
+
+        .metric-card button:hover {
+            opacity: 0.7;
+        }
+
+        .metric-card {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .metric-card h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .metric-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 1.5rem 0 .5rem;
+        }
+
+        .metric-card p,
+        .metric-card li {
+            line-height: 1.7;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <div class="logo-wrapper">
+
+            <div class="brand">
+                <img src="images/Metric Conversion Logo Image.jpeg" alt="Metric Conversions Logo">
+                <h1>Metric Conversions</h1>
+            </div>
+
+            <button class="menu-toggle" onclick="toggleMenu(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+    <header class="nav-header">
+        <nav class="responsive-nav" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">Home</a>
+            <a href="conversionchart.html" onclick="toggleMenu()">Conversion Chart</a>
+            <a href="length.html" onclick="toggleMenu()">Length</a>
+            <a href="area.html" onclick="toggleMenu()">Area</a>
+            <a href="volume.html" onclick="toggleMenu()">Volume</a>
+            <a href="mass.html" onclick="toggleMenu()">Mass</a>
+            <a href="temperature.html" onclick="toggleMenu()">Temperature</a>
+            <a href="history.html" onclick="toggleMenu()">History</a>
+            <a href="articles.html" onclick="toggleMenu()">Articles</a>
+            <a href="faq.html" onclick="toggleMenu()">FAQs</a>
+        </nav>
+    </header>
+
+    <section class="py-20 max-w-5xl mx-auto px-6">
+        <div class="metric-card">
+            <h2>Length Conversion Calculator</h2>
+
+            <label>Enter Value</label>
+            <input id="inputValue" type="number" class="border p-3 rounded w-full mb-4">
+
+            <select id="fromUnit" class="border p-3 rounded w-full mb-4">
+                <option value="in">Inches</option>
+                <option value="mm">Millimeters</option>
+                <option value="ft">Feet</option>
+                <option value="m">Meters</option>
+                <option value="yd">Yards</option>
+                <option value="km">Kilometers</option>
+                <option value="mi">Miles</option>
+            </select>
+
+            <select id="toUnit" class="border p-3 rounded w-full mb-4">
+                <option value="mm">Millimeters</option>
+                <option value="in">Inches</option>
+                <option value="ft">Feet</option>
+                <option value="m">Meters</option>
+                <option value="yd">Yards</option>
+                <option value="km">Kilometers</option>
+                <option value="mi">Miles</option>
+            </select>
+
+            <button onclick="convertLength()" class="bg-black text-white px-6 py-3 rounded">
+                Convert
+            </button>
+
+            <p id="result" class="mt-4 font-semibold">Result:</p>
+        </div>
+
+        <div class="metric-card">
+            <h2>Metric Measurements Of Length</h2>
+
+            <h3>1. Meters (m)</h3>
+            <p>
+                A meter (or metre, outside the U.S.) is a basic unit of length in the metric system, which is used by
+                most countries.
+            </p>
+            <ul class="list-disc list-inside">
+                <li>1 meter = 100 centimeters</li>
+                <li>1 meter = 1,000 millimeters</li>
+                <li>1 meter = 3.28 feet</li>
+            </ul>
+            <p><strong>Examples:</strong></p>
+            <ul class="list-disc list-inside">
+                <li>A door is about 2 meters tall</li>
+                <li>A guitar is about 1 meter long</li>
+                <li>One big step is roughly 1 meter</li>
+            </ul>
+            <p>The meter is the standard unit scientists use to measure length.</p>
+
+            <h3>2. Feet (ft)</h3>
+            <p>
+                A feet is a unit of length used mainly in the United States and a few other countries.
+            </p>
+            <ul class="list-disc list-inside">
+                <li>1 foot = 12 inches</li>
+                <li>1 foot = 0.3048 meters</li>
+                <li>3 feet = 1 yard</li>
+            </ul>
+            <p><strong>Examples:</strong></p>
+            <ul class="list-disc list-inside">
+                <li>The length of a ruler is often 1 foot</li>
+                <li>A doorway is usually about 6-7 feet tall</li>
+            </ul>
+            <p>The name comes from the human foot historically it was based on foot length.</p>
+
+            <h3>3. Inches (in)</h3>
+            <p>
+                An inch is a unit of length used mainly in the United States, the UK, and a few other countries.
+            </p>
+            <ul class="list-disc list-inside">
+                <li>1 inch = 2.54 centimeters</li>
+                <li>12 inches = 1 foot</li>
+            </ul>
+            <p><strong>Examples:</strong></p>
+            <ul class="list-disc list-inside">
+                <li>The width of a finger is about 1 inch</li>
+                <li>A standard pencil is about 7-8 inches long</li>
+                <li>A phone screen might be 6 inches diagonally</li>
+            </ul>
+
+            <h3>4. Millimeters (mm)</h3>
+            <p>
+                A millimeter (written as mm) is a unit of length in the metric system.
+            </p>
+            <ul class="list-disc list-inside">
+                <li>1 millimeter = one-thousandth of a meter</li>
+                <li>10 millimeters = 1 centimeter</li>
+                <li>1,000 millimeters = 1 meter</li>
+            </ul>
+            <p>
+                Used for very small distances like:
+            </p>
+            <ul class="list-disc list-inside">
+                <li>The thickness of a coin</li>
+                <li>The width of a wire</li>
+                <li>Small engineering parts</li>
+            </ul>
+            <p>For example, a pencil tip is about 1-2 mm wide.</p>
+
+            <h3>5. Yards (yd)</h3>
+            <p>
+                A yard (written as yd) is a unit of length in the imperial/US system.
+            </p>
+            <ul class="list-disc list-inside">
+                <li>1 yard = 3 feet</li>
+                <li>1 yard = 36 inches</li>
+                <li>1 yard = 0.914 meters</li>
+            </ul>
+            <p>Often used for:</p>
+            <ul class="list-disc list-inside">
+                <li>Room length</li>
+                <li>Fabric</li>
+                <li>Sports fields</li>
+            </ul>
+            <p>A football field is 100 yards long.</p>
+
+            <h3>6. Miles (mi)</h3>
+            <p>
+                A mile is a unit of distance used mainly in the United States.
+            </p>
+            <ul class="list-disc list-inside">
+                <li>1 mile = 5,280 feet</li>
+                <li>1 mile = 1.609 kilometers</li>
+                <li>1 mile = 1,760 yards</li>
+            </ul>
+            <p>
+                Statute miles are used on roads. Nautical miles are used in aviation and sea travel.
+            </p>
+
+            <h3>7. Kilometers (km)</h3>
+            <p>
+                A kilometer is a metric unit of distance used worldwide.
+            </p>
+            <ul class="list-disc list-inside">
+                <li>1 kilometer = 1,000 meters</li>
+                <li>1 kilometer = 0.62 miles</li>
+            </ul>
+            <p><strong>Examples:</strong></p>
+            <ul class="list-disc list-inside">
+                <li>A short walk is 1-2 km</li>
+                <li>A city drive might be 10 km</li>
+                <li>5 km = a little over 3 miles</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="mc-footer">
+        <div class="mc-container">
+
+            <div class="mc-footer-grid">
+
+                <div class="mc-footer-brand">
+                    <div class="mc-logo">
+                        <img src="images/Metric Conversion Logo Image.jpeg" alt="Metric Conversions Logo">
+                        <span>Metric Conversions</span>
+                    </div>
+                    <p>
+                        Simple, fast and accurate metric unit conversions for everyday and professional use.
+                    </p>
+                </div>
+
+                <div class="mc-footer-col">
+                    <h6><b>Converters</b></h6>
+                    <ul>
+                        <li><a href="volume.html">Volume</a></li>
+                        <li><a href="area.html">Area</a></li>
+                        <li><a href="mass.html">Mass</a></li>
+                        <li><a href="temperature.html">Temperature</a></li>
+                    </ul>
+                </div>
+
+                <div class="mc-footer-col">
+                    <h6><b>Resources</b></h6>
+                    <ul>
+                        <li><a href="history.html">How It Works</a></li>
+                        <li><a href="conversionchart.html">Conversion Chart</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                    </ul>
+                </div>
+
+                <div class="mc-footer-col">
+                    <h6><b>Stay Connected</b></h6>
+
+                    <form class="mc-footer-form" id="subscribeForm">
+                        <input type="email" name="email" id="email" placeholder="Your Email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+
+                    <p id="msg"></p>
+                    <br>
+
+                    <script src="script.js"></script>
+
+                    <div class="mc-social-icons">
+                        <a href="https://www.facebook.com/nabeel.abbas06" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/nabeel_abbas06" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.threads.com/@nabeel_abbas06" aria-label="Threads"><i
+                                class="fa-brands fa-threads"></i></a>
+                        <a href="https://x.com/nabeel_abbas06" aria-label="Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.tiktok.com/@nabeel_abbas06" aria-label="TikTok"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                        <a href="http://www.youtube.com/@nabeel.abbas06" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="mc-footer-bottom">
+            © 2025 Created by Nabeel Abbas - Metric Conversions - All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        const factors = { mm: 0.001, m: 1, km: 1000, in: 0.0254, ft: 0.3048, yd: 0.9144, mi: 1609.34 };
+        function convertLength() {
+            const v = document.getElementById("inputValue").value;
+            const f = document.getElementById("fromUnit").value;
+            const t = document.getElementById("toUnit").value;
+            if (v === "") { document.getElementById("result").innerText = "Result:"; return; }
+            const r = (v * factors[f]) / factors[t];
+            document.getElementById("result").innerText = `Result: ${v} ${f} = ${r.toFixed(4)} ${t}`;
+        }
+    </script>
+</body>
+</html>

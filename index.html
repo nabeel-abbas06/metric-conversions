@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metric Conversions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      color: #222;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .top-header {
+      background: #fff;
+      padding: 15px;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      width: 100%;
+    }
+
+    .logo-wrapper img {
+      height: 42px;
+      width: auto;
+    }
+
+    .logo-wrapper h1 {
+      font-size: 28px;
+      color: #000;
+    }
+
+    .nav-header {
+      background: #000;
+      padding: 15px 0;
+      width: 100%;
+    }
+
+    @media (max-width:768px) {
+      .nav-header {
+        padding: 0;
+      }
+
+      .responsive-nav {
+        display: none;
+      }
+
+      .responsive-nav.active {
+        display: flex;
+      }
+    }
+
+    .responsive-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .responsive-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .responsive-nav a:hover {
+      color: #ccc;
+    }
+
+    .responsive-nav a.active {
+      background: #fff;
+      color: #000;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .logo-wrapper img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .top-header {
+      background: #fff;
+      padding: 14px 20px;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      height: 42px;
+    }
+
+    .brand h1 {
+      font-size: 26px;
+      margin: 0;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .nav-header {
+      background: #000;
+      width: 100%;
+    }
+
+    .responsive-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+    }
+
+    .responsive-nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      transition: 0.3s;
+    }
+
+    .responsive-nav a:hover {
+      color: #ccc;
+    }
+
+    @media (max-width:768px) {
+
+      .logo-wrapper {
+        justify-content: space-between;
+      }
+
+      .brand {
+        justify-content: flex-start;
+      }
+
+      .brand img {
+        height: 34px;
+      }
+
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+        border: none;
+        background: none;
+        font-size: 24px;
+        color: #000;
+        cursor: pointer;
+      }
+
+      .nav-header {
+        background: #000;
+      }
+
+      .responsive-nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 20px;
+      }
+
+      .responsive-nav.active {
+        display: flex;
+      }
+
+      .responsive-nav a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid #222;
+      }
+    }
+
+    @media (max-width:768px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .brand img {
+        height: 34px;
+      }
+
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .responsive-nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background: #000;
+        padding: 10px 20px;
+      }
+
+      .responsive-nav.active {
+        display: flex;
+      }
+
+      .responsive-nav a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid #222;
+      }
+    }
+
+    @media (min-width:769px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .responsive-nav {
+        display: flex !important;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 35px;
+      height: 30px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 28px;
+      background: #000;
+      margin: 6px auto;
+      border-radius: 5px;
+      transition: 0.4s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    @media(max-width:768px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .metric-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
+      transition: .35s;
+      height: 100%;
+      min-height: auto;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, .12);
+    }
+
+    .metric-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .metric-card h4 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: #222;
+    }
+
+    .metric-card p {
+      color: #555;
+    }
+
+    .metric-card ul {
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 50px 0;
+    }
+
+    .single-card {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .mc-footer {
+      background: #fff;
+      border-top: 1px solid #eee;
+      margin-top: 50px;
+    }
+
+    .mc-social-icons a:hover {
+      opacity: 0.7;
+    }
+
+    .mc-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .mc-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+    }
+
+    .mc-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .mc-logo img {
+      height: 40px;
+    }
+
+    .mc-logo span {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .mc-footer-brand p {
+      color: #666;
+      max-width: 320px;
+    }
+
+    .mc-footer-col h6 {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .mc-footer-col ul {
+      list-style: none;
+    }
+
+    .mc-footer-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .mc-footer-col ul li a {
+      text-decoration: none;
+      color: #666;
+    }
+
+    .mc-footer-form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .mc-footer-form input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .mc-footer-form button {
+      padding: 10px 18px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .mc-footer-form button:hover {
+      opacity: 0.7;
+    }
+
+    .mc-social-icons {
+      display: flex;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .mc-social-icons a {
+      color: #000;
+      font-size: 22px;
+    }
+
+    .mc-footer-bottom {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 18px;
+      font-size: 14px;
+    }
+
+    @media (min-width:1600px) {
+
+      .container {
+        max-width: 1400px;
+      }
+
+      .metric-grid {
+        gap: 40px;
+      }
+
+    }
+
+    @media (max-width:1200px) {
+
+      .container {
+        padding: 15px;
+      }
+
+      .metric-card {
+        padding: 20px;
+      }
+
+    }
+
+    @media (max-width:992px) {
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mc-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+    }
+
+    @media (max-width:768px) {
+
+      .logo-wrapper h1 {
+        font-size: 24px;
+      }
+
+      .responsive-nav {
+        gap: 10px;
+      }
+
+      .responsive-nav a {
+        font-size: 13px;
+        padding: 6px 10px;
+      }
+
+      .metric-card {
+        padding: 18px;
+      }
+
+      .metric-card h4 {
+        font-size: 22px;
+      }
+
+      .mc-footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .mc-logo {
+        justify-content: center;
+      }
+
+      .mc-footer-brand p {
+        max-width: 100%;
+      }
+
+      .mc-social-icons {
+        justify-content: center;
+      }
+
+      .mc-footer-form {
+        flex-direction: column;
+      }
+
+      .mc-footer-form button {
+        width: 100%;
+      }
+
+    }
+
+    @media (max-width:480px) {
+
+      .logo-wrapper img {
+        height: 34px;
+      }
+
+      .logo-wrapper h1 {
+        font-size: 20px;
+      }
+
+      .metric-card {
+        padding: 15px;
+      }
+
+      .metric-card h4 {
+        font-size: 20px;
+      }
+
+      .metric-card p,
+      .metric-card li {
+        font-size: 14px;
+      }
+
+      .mc-social-icons a {
+        font-size: 18px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <header class="top-header">
+    <div class="logo-wrapper">
+
+      <div class="brand">
+        <img src="images/Metric Conversion Logo Image.jpeg" alt="Metric Conversions Logo">
+        <h1>Metric Conversions</h1>
+      </div>
+
+      <button class="menu-toggle" onclick="toggleMenu(this)">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <header class="nav-header">
+    <nav class="responsive-nav" id="mobileMenu">
+      <a href="conversionchart.html" onclick="toggleMenu()">Conversion Chart</a>
+      <a href="length.html" onclick="toggleMenu()">Length</a>
+      <a href="area.html" onclick="toggleMenu()">Area</a>
+      <a href="volume.html" onclick="toggleMenu()">Volume</a>
+      <a href="mass.html" onclick="toggleMenu()">Mass</a>
+      <a href="temperature.html" onclick="toggleMenu()">Temperature</a>
+      <a href="history.html" onclick="toggleMenu()">History</a>
+      <a href="articles.html" onclick="toggleMenu()">Articles</a>
+      <a href="faq.html" onclick="toggleMenu()">FAQs</a>
+    </nav>
+  </header>
+
+  <body class="bg-white">
+    <section class="py-20 max-w-6xl mx-auto px-6">
+      <div class="metric-card bg-gray-50 p-6 rounded-xl shadow mb-16">
+        <img src="images/Metric Conversion Image.jpeg" class="metric-img w-full h-72 object-cover rounded-lg mb-4">
+
+        <h4 class="text-2xl font-semibold text-gray-800 mb-3">
+          Introduction
+        </h4>
+
+        <p class="text-gray-700 leading-relaxed">
+          The metric system originated in France in 1799 following the French
+          Revolution although decimal units had been used in many other countries
+          and cultures previously. Although there have been many different
+          measurements and the definitions of the units have been revised, the
+          official system of measurements of most countries is the modern form of
+          the metric system which is known as the "International System of Units".
+          <br><br>
+          Since other systems of measurement are still used around the world, such
+          as the United States and the United Kingdom, this site aims to help people
+          convert units of measurement with metric converters and metric conversion
+          tables and to better understand alternative measurements that they are
+          unfamiliar with:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 px-4 lg:px-16">
+
+        <div class="metric-card">
+          <img src="images/Length Image.jpg" alt="Length" class="metric-img">
+          <h4 class="text-xl font-semibold mb-3">Length</h4>
+          <p class="text-gray-700 mb-4">Length is the measurement of how long something is from one end to the other.
+          </p>
+          <div class="text-gray-700 mb-4">
+            <strong>Examples:</strong>
+            <ul class="list-disc list-inside mt-1">
+              <li>Length of a table</li>
+              <li>Length of a road</li>
+              <li>Length of a rope</li>
+            </ul>
+          </div>
+          <div class="text-gray-700">
+            <strong>Units:</strong>
+            <p class="mt-1">Feet (ft), Inches (in), Meters (m), Millimeters (mm), Yards (yd), Miles (mi), Kilometers
+              (km)</p>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <img src="images/Area Image.jpg" alt="Area" class="metric-img">
+          <h4 class="text-xl font-semibold mb-3">Area</h4>
+          <p class="text-gray-700 mb-4">Area is the amount of surface covered by a flat shape.</p>
+          <div class="text-gray-700 mb-4">
+            <strong>Examples:</strong>
+            <ul class="list-disc list-inside mt-1">
+              <li>Classroom floor</li>
+              <li>Garden land</li>
+              <li>Table top</li>
+            </ul>
+          </div>
+          <div class="text-gray-700">
+            <strong>Units:</strong>
+            <p class="mt-1">mm², in², ft², yd², m², mi², km², Acres, Hectares</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10 mb-16 px-4 md:px-16">
+
+        <div class="metric-card flex flex-col">
+          <img src="images/Volume Image.jpg" alt="Volume" class="metric-img">
+
+          <h4 class="text-xl font-semibold mb-3 min-h-[32px]">Volume</h4>
+
+          <p class="text-gray-700 mb-4 min-h-[120px]">
+            Volume is the amount of space an object occupies or can hold. You can think of it as the capacity of an
+            object for liquids, solids, or gases.
+          </p>
+
+          <div class="text-gray-700 mb-4 flex-1">
+            <strong>Examples:</strong>
+            <ul class="list-disc list-inside mt-1">
+              <li>Water bottle</li>
+              <li>Box space</li>
+              <li>Swimming pool</li>
+              <li>Liquid container in kitchen</li>
+            </ul>
+          </div>
+
+          <div class="text-gray-700 mt-auto min-h-[80px]">
+            <strong>Units:</strong>
+            <p class="mt-1">fl oz, mL, gal, L, ft³, m³, yd³</p>
+          </div>
+        </div>
+
+        <div class="metric-card flex flex-col">
+          <img src="images/Mass Image.jpg" alt="Mass" class="metric-img">
+
+          <h4 class="text-xl font-semibold mb-3 min-h-[32px]">Mass</h4>
+
+          <p class="text-gray-700 mb-4 min-h-[120px]">
+            Mass is the amount of matter in an object and does not change with location or gravity. It is a measure of
+            how much substance an object contains.
+          </p>
+
+          <div class="text-gray-700 mb-4 flex-1">
+            <strong>Examples:</strong>
+            <ul class="list-disc list-inside mt-1">
+              <li>Human body</li>
+              <li>School bag</li>
+              <li>Apple</li>
+              <li>Stone</li>
+            </ul>
+          </div>
+
+          <div class="text-gray-700 mt-auto min-h-[80px]">
+            <strong>Units:</strong>
+            <p class="mt-1">Ounces (oz), Grams (g), Pounds (lb), Kilograms (kg), Short Tons, Metric Tons</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center mb-16 px-4 md:px-16">
+        <div class="grid md:grid-cols-1 gap-10 max-w-2xl w-full">
+
+          <div class="metric-card">
+            <img src="images/Temperature Image.jpeg" alt="Temperature" class="metric-img">
+            <h4 class="text-xl font-semibold mb-3 min-h-[32px]">Temperature</h4>
+            <p class="text-gray-700 mb-4 min-h-[72px]">Temperature measures how hot or cold something is and indicates
+              the level of heat energy.</p>
+            <div class="text-gray-700 mb-4 min-h-[120px]">
+              <strong>Examples:</strong>
+              <ul class="list-disc list-inside mt-1">
+                <li>Ice temperature</li>
+                <li>Boiling water</li>
+                <li>Human body</li>
+                <li>Room temperature</li>
+              </ul>
+            </div>
+            <div class="text-gray-700 mt-auto min-h-[80px]">
+              <strong>Units:</strong>
+              <p class="mt-1">Celsius (°C), Fahrenheit (°F), Kelvin (K)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mc-footer">
+      <div class="mc-container">
+        <div class="mc-footer-grid">
+          <div class="mc-footer-brand">
+            <div class="mc-logo">
+              <img src="images/Metric Conversion Logo Image.jpeg" alt="Metric Conversions Logo">
+              <span>Metric Conversions</span>
+            </div>
+            <p>
+              Simple, fast and accurate metric unit conversions for everyday and professional use.
+            </p>
+          </div>
+
+          <div class="mc-footer-col">
+            <h6><b>Converters</b></h6>
+            <ul>
+              <li><a href="length.html">Length</a></li>
+              <li><a href="area.html">Area</a></li>
+              <li><a href="volume.html">Volume</a></li>
+              <li><a href="temperature.html">Temperature</a></li>
+            </ul>
+          </div>
+
+          <div class="mc-footer-col">
+            <h6><b>Resources</b></h6>
+            <ul>
+              <li><a href="history.html">How It Works</a></li>
+              <li><a href="conversionchart.html">Conversion Chart</a></li>
+              <li><a href="faq.html">FAQs</a></li>
+              <li><a href="articles.html">Articles</a></li>
+            </ul>
+          </div>
+
+          <div class="mc-footer-col">
+            <h6><b>Stay Connected</b></h6>
+
+            <form class="mc-footer-form" id="subscribeForm">
+              <input type="email" name="email" id="email" placeholder="Your Email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+
+            <p id="msg"></p>
+            <br>
+
+            <script src="script.js"></script>
+
+            <div class="mc-social-icons">
+              <a href="https://www.facebook.com/nabeel.abbas06" aria-label="Facebook"><i
+                  class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/nabeel_abbas06" aria-label="Instagram"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.threads.com/@nabeel_abbas06" aria-label="Threads"><i
+                  class="fa-brands fa-threads"></i></a>
+              <a href="https://x.com/nabeel_abbas06" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.tiktok.com/@nabeel_abbas06" aria-label="TikTok"><i
+                  class="fa-brands fa-tiktok"></i></a>
+              <a href="http://www.youtube.com/@nabeel.abbas06" aria-label="YouTube"><i
+                  class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br><br><br>
+
+      <div class="mc-footer-bottom">
+        © 2025 Created by Nabeel Abbas - Metric Conversions - All Rights Reserved.
+      </div>
+    </footer>
+  </body>
+</html>

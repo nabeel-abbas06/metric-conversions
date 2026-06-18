@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Chart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            color: #222;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .top-header {
+            background: #fff;
+            padding: 15px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .logo-wrapper img {
+            height: 42px;
+            width: auto;
+        }
+
+        .logo-wrapper h1 {
+            font-size: 28px;
+            color: #000;
+        }
+
+        .nav-header {
+            background: #000;
+            padding: 15px 0;
+            width: 100%;
+        }
+
+        @media (max-width:768px) {
+            .nav-header {
+                padding: 0;
+            }
+
+            .responsive-nav {
+                display: none;
+            }
+
+            .responsive-nav.active {
+                display: flex;
+            }
+        }
+
+        .responsive-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .responsive-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .responsive-nav a:hover {
+            color: #ccc;
+        }
+
+        .responsive-nav a.active {
+            background: #fff;
+            color: #000;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .logo-wrapper img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .top-header {
+            background: #fff;
+            padding: 14px 20px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand img {
+            height: 42px;
+        }
+
+        .brand h1 {
+            font-size: 26px;
+            margin: 0;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .nav-header {
+            background: #000;
+            width: 100%;
+        }
+
+        .responsive-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .responsive-nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+
+        .responsive-nav a:hover {
+            color: #ccc;
+        }
+
+        @media (max-width:768px) {
+
+            .logo-wrapper {
+                justify-content: space-between;
+            }
+
+            .brand {
+                justify-content: flex-start;
+            }
+
+            .brand img {
+                height: 34px;
+            }
+
+            .brand h1 {
+                font-size: 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+                border: none;
+                background: none;
+                font-size: 24px;
+                color: #000;
+                cursor: pointer;
+            }
+
+            .nav-header {
+                background: #000;
+            }
+
+            .responsive-nav {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 20px;
+            }
+
+            .responsive-nav.active {
+                display: flex;
+            }
+
+            .responsive-nav a {
+                width: 100%;
+                padding: 12px 0;
+                border-bottom: 1px solid #222;
+            }
+        }
+
+        @media (max-width:768px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .brand img {
+                height: 34px;
+            }
+
+            .brand h1 {
+                font-size: 20px;
+            }
+
+            .responsive-nav {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                background: #000;
+                padding: 10px 20px;
+            }
+
+            .responsive-nav.active {
+                display: flex;
+            }
+
+            .responsive-nav a {
+                width: 100%;
+                padding: 12px 0;
+                border-bottom: 1px solid #222;
+            }
+        }
+
+        @media (min-width:769px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            .responsive-nav {
+                display: flex !important;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 35px;
+            height: 30px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 28px;
+            background: #000;
+            margin: 6px auto;
+            border-radius: 5px;
+            transition: 0.4s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        @media(max-width:768px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+        }
+
+        .mc-footer {
+            background: #fff;
+            border-top: 1px solid #eee;
+            margin-top: 50px;
+        }
+
+        .mc-social-icons a:hover {
+            opacity: 0.7;
+        }
+
+        .mc-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .mc-footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .mc-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .mc-logo img {
+            height: 40px;
+        }
+
+        .mc-logo span {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .mc-footer-brand p {
+            color: #666;
+            max-width: 320px;
+        }
+
+        .mc-footer-col h6 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .mc-footer-col ul {
+            list-style: none;
+        }
+
+        .mc-footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .mc-footer-col ul li a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        .mc-footer-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .mc-footer-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mc-footer-form button {
+            padding: 10px 18px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .mc-footer-form button:hover {
+            opacity: 0.7;
+        }
+
+        .mc-social-icons {
+            display: flex;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .mc-social-icons a {
+            color: #000;
+            font-size: 22px;
+        }
+
+        .mc-footer-bottom {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 18px;
+            font-size: 14px;
+        }
+
+        @media (min-width:1600px) {
+
+            .container {
+                max-width: 1400px;
+            }
+
+            .metric-grid {
+                gap: 40px;
+            }
+
+        }
+
+        @media (max-width:1200px) {
+
+            .container {
+                padding: 15px;
+            }
+
+            .metric-card {
+                padding: 20px;
+            }
+
+        }
+
+        @media (max-width:992px) {
+
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mc-footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+        }
+
+        @media (max-width:768px) {
+
+            .logo-wrapper h1 {
+                font-size: 24px;
+            }
+
+            .responsive-nav {
+                gap: 10px;
+            }
+
+            .responsive-nav a {
+                font-size: 13px;
+                padding: 6px 10px;
+            }
+
+            .metric-card {
+                padding: 18px;
+            }
+
+            .metric-card h4 {
+                font-size: 22px;
+            }
+
+            .mc-footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .mc-logo {
+                justify-content: center;
+            }
+
+            .mc-footer-brand p {
+                max-width: 100%;
+            }
+
+            .mc-social-icons {
+                justify-content: center;
+            }
+
+            .mc-footer-form {
+                flex-direction: column;
+            }
+
+            .mc-footer-form button {
+                width: 100%;
+            }
+
+        }
+
+        @media (max-width:480px) {
+
+            .logo-wrapper img {
+                height: 34px;
+            }
+
+            .logo-wrapper h1 {
+                font-size: 20px;
+            }
+
+            .metric-card {
+                padding: 15px;
+            }
+
+            .metric-card h4 {
+                font-size: 20px;
+            }
+
+            .metric-card p,
+            .metric-card li {
+                font-size: 14px;
+            }
+
+            .mc-social-icons a {
+                font-size: 18px;
+            }
+
+        }
+
+        .metric-card {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .metric-card h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #111;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <div class="logo-wrapper">
+
+            <div class="brand">
+                <img src="images/Metric Conversion Logo Image.jpeg" alt="Metric Conversions Logo">
+                <h1>Metric Conversions</h1>
+            </div>
+
+            <button class="menu-toggle" onclick="toggleMenu(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+    <header class="nav-header">
+        <nav class="responsive-nav" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">Home</a>
+            <a href="conversionchart.html" onclick="toggleMenu()">Conversion Chart</a>
+            <a href="length.html" onclick="toggleMenu()">Length</a>
+            <a href="area.html" onclick="toggleMenu()">Area</a>
+            <a href="volume.html" onclick="toggleMenu()">Volume</a>
+            <a href="mass.html" onclick="toggleMenu()">Mass</a>
+            <a href="temperature.html" onclick="toggleMenu()">Temperature</a>
+            <a href="history.html" onclick="toggleMenu()">History</a>
+            <a href="articles.html" onclick="toggleMenu()">Articles</a>
+            <a href="faq.html" onclick="toggleMenu()">FAQs</a>
+        </nav>
+    </header>
+
+    <section class="py-20 max-w-5xl mx-auto px-6">
+        <div class="metric-card">
+            <h2>1. Length</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Multiply by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inches</td>
+                            <td>Millimeters</td>
+                            <td>25.4</td>
+                        </tr>
+                        <tr>
+                            <td>Feet</td>
+                            <td>Meters</td>
+                            <td>0.3048</td>
+                        </tr>
+                        <tr>
+                            <td>Yards</td>
+                            <td>Meters</td>
+                            <td>0.9144</td>
+                        </tr>
+                        <tr>
+                            <td>Miles</td>
+                            <td>Kilometers</td>
+                            <td>1.60934</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. Area</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Multiply by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Square Inches</td>
+                            <td>Square Millimeters</td>
+                            <td>645.16</td>
+                        </tr>
+                        <tr>
+                            <td>Square Feet</td>
+                            <td>Square Meters</td>
+                            <td>0.092903</td>
+                        </tr>
+                        <tr>
+                            <td>Square Yards</td>
+                            <td>Square Meters</td>
+                            <td>0.836127</td>
+                        </tr>
+                        <tr>
+                            <td>Acres</td>
+                            <td>Hectares</td>
+                            <td>0.404686</td>
+                        </tr>
+                        <tr>
+                            <td>Square Miles</td>
+                            <td>Square Kilometers</td>
+                            <td>2.58999</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>3. Volume</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Multiply by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fluid Ounces</td>
+                            <td>Milliliters</td>
+                            <td>29.5735</td>
+                        </tr>
+                        <tr>
+                            <td>Gallons</td>
+                            <td>Liters</td>
+                            <td>3.78541</td>
+                        </tr>
+                        <tr>
+                            <td>Cubic Feet</td>
+                            <td>Cubic Meters</td>
+                            <td>0.0283168</td>
+                        </tr>
+                        <tr>
+                            <td>Cubic Yards</td>
+                            <td>Cubic Meters</td>
+                            <td>0.764555</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>4. Mass</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Multiply by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ounces</td>
+                            <td>Grams</td>
+                            <td>28.3495</td>
+                        </tr>
+                        <tr>
+                            <td>Pounds</td>
+                            <td>Kilograms</td>
+                            <td>0.453592</td>
+                        </tr>
+                        <tr>
+                            <td>Short Tons</td>
+                            <td>Metric Tons</td>
+                            <td>0.907185</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>5. Temperature</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Formula</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>°C = (°F − 32) × 5/9</td>
+                        </tr>
+                        <tr>
+                            <td>°F = (°C × 9/5) + 32</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="mc-footer">
+        <div class="mc-container">
+            <div class="mc-footer-grid">
+                <div class="mc-footer-brand">
+                    <div class="mc-logo">
+                        <img src="images/Metric Conversion Logo Image.jpeg" alt="Metric Conversions Logo">
+                        <span>Metric Conversions</span>
+                    </div>
+                    <p>
+                        Simple, fast and accurate metric unit conversions for everyday and professional use.
+                    </p>
+                </div>
+
+                <div class="mc-footer-col">
+                    <h6><b>Converters</b></h6>
+                    <ul>
+                        <li><a href="length.html">Length</a></li>
+                        <li><a href="area.html">Area</a></li>
+                        <li><a href="volume.html">Volume</a></li>
+                        <li><a href="temperature.html">Temperature</a></li>
+                    </ul>
+                </div>
+
+                <div class="mc-footer-col">
+                    <h6><b>Resources</b></h6>
+                    <ul>
+                        <li><a href="history.html">How It Works</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                    </ul>
+                </div>
+
+                <div class="mc-footer-col">
+                    <h6><b>Stay Connected</b></h6>
+
+                    <form class="mc-footer-form" id="subscribeForm">
+                        <input type="email" name="email" id="email" placeholder="Your Email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+
+                    <p id="msg"></p>
+                    <br>
+
+                    <script src="script.js"></script>
+
+                    <div class="mc-social-icons">
+                        <a href="https://www.facebook.com/nabeel.abbas06" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/nabeel_abbas06" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.threads.com/@nabeel_abbas06" aria-label="Threads"><i
+                                class="fa-brands fa-threads"></i></a>
+                        <a href="https://x.com/nabeel_abbas06" aria-label="Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.tiktok.com/@nabeel_abbas06" aria-label="TikTok"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                        <a href="http://www.youtube.com/@nabeel.abbas06" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="mc-footer-bottom">
+            © 2025 Created by Nabeel Abbas - Metric Conversions - All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>
